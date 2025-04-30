@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vin'z Car Care Center - Alaminos City, Pangasinan</title>
+    <meta name="description" content="Professional auto care services in Alaminos City. Your trusted car care partner for maintenance and repairs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #003366;
+            --accent-color: #ff6b00;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --success-color: #28a745;
+            --border-radius: 5px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        .logo h1 span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: var(--transition);
+            background-color: var(--dark-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://scontent.fcrk2-3.fna.fbcdn.net/v/t39.30808-6/480904434_978896557672123_8872813352309309355_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHM-oLGzbzbROjChV27LsUr7MDRUmiJ8B7swNFSaInwHq1jkyPe2TpCN9HMBPUgN9LkaCLTuGqn503RmMchu5Hn&_nc_ohc=E2u9btQvRDgQ7kNvwH83A59&_nc_oc=Adm05vYAzeJbDGFmU9OqEarluwRVpzuPC_chQ87vddYlznCB-vq4JkKTgSXEVUF6dxY&_nc_zt=23&_nc_ht=scontent.fcrk2-3.fna&_nc_gid=z4XPbn4rCz0PuVWNMYaJGw&oh=00_AfHkIbhF93MStHA40Fb2QaYG7WF9gpKCO0m-AE7845J_3A&oe=680A2F7D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.7s forwards 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-card p {
+            color: var(--gray-color);
+        }
+
+        .cta {
+            background: linear-gradient(rgba(189, 213, 243, 0.9), rgba(0, 51, 102, 0.9)), url('https://scontent.fcrk2-4.fna.fbcdn.net/v/t39.30808-6/480795664_978909777670801_4878656614667522506_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG_wVLAJfZw2ugq8V1L_lsjYSB1SlvKzfZhIHVKW8rN9pzRH7TWjm7x5UIBxyEjlowOsMBmCoRtnudWPGF1oJms&_nc_ohc=VBb9YlhaOa0Q7kNvwHroBiN&_nc_oc=AdljKbcULnNX44ZR56v0AHqeN89p7NXiw5imAVAB86Wgji-uT4xaVCVxNABKg9gPFmQ&_nc_zt=23&_nc_ht=scontent.fcrk2-4.fna&_nc_gid=-698Bwq9LUUwQrbH5uSN8Q&oh=00_AfF82LxS6oyhQe-y-drftn6zglMlCQKMdy_vnP7H75wkEQ&oe=680A4317');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: auto;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+        }
+
+        .owner-info {
+            margin-top: 2rem;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--border-radius);
+        }
+
+        .owner-info h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0;
+        }
+
+        .contact {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .contact-item p {
+            color: var(--gray-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .map {
+            padding: 50px 0 100px;
+            background-color: var(--light-color);
+        }
+
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-logo h2 span {
+            color: var(--accent-color);
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h3,
+        .footer-services h3,
+        .footer-social h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .footer-links h3::after,
+        .footer-services h3::after,
+        .footer-social h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-links ul li,
+        .footer-services ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-services ul li {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .footer-services ul li:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+   
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+    
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--success-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .toast.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+       
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+                order: -1;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                gap: 0;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-icon {
+                margin-bottom: 10px;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        
+        @media print {
+            .navbar, .back-to-top, .hero, .cta, footer {
+                display: none !important;
+            }
+
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12pt;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .section-header h2 {
+                color: black;
+            }
+
+            a {
+                text-decoration: underline;
+                color: black;
+            }
+
+            .btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>    Vin'z    <span> 
+                        <br>
+                    <h6> Car Care</span> Center</h6>
+                    </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Auto Care Services</h1>
+                <h2>Your Trusted Car Care Partner in Alaminos City</h2>
+                <p>Providing high-quality automotive maintenance and repair services to keep your vehicle running at its best. Our certified technicians use premium products to ensure your car's longevity and performance.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of automotive services to keep your vehicle in optimal condition</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="wrench"></i>
+                    </div>
+                    <h3>Preventive Maintenance</h3>
+                    <p>Regular check-ups and maintenance services to ensure vehicles remain in optimal condition, preventing potential issues before they become costly repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="file"></i>
+                    </div>
+                    <h3>Oil Change Services</h3>
+                    <p>Providing high-quality engine oils and lubricants, including the well-known USLUBE products, to enhance engine performance and longevity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="battery"></i>
+                    </div>
+                    <h3>Battery Inspection & Replacement</h3>
+                    <p>Checking battery health and providing replacements when necessary to prevent unexpected breakdowns and ensure reliable starting.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="disc"></i>
+                    </div>
+                    <h3>Brake System Check & Repair</h3>
+                    <p>Ensuring that your vehicle's braking system is functioning correctly for safety and optimal performance on the road.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3>Engine Tune-ups</h3>
+                    <p>Adjusting and fine-tuning the engine to improve fuel efficiency and overall performance for a smoother driving experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="car"></i>
+                    </div>
+                    <h3>Tire Inspection & Services</h3>
+                    <p>Checking tire conditions, pressure, and alignment to ensure proper handling, safety, and extended tire life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Keep Your Vehicle in Top Condition</h2>
+            <p>Trust our experienced mechanics for all your automotive needs. Schedule an appointment today and experience the Vinz Car Care Center difference.</p>
+            <a href="#contact" class="btn btn-primary">Schedule Service Today</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Vinz Car Care Center</h2>
+                <p>Your trusted automotive service provider in Alaminos City, Pangasinan</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="  https://scontent.fcrk4-1.fna.fbcdn.net/v/t39.30808-6/483831107_992381389656973_2257299337465855113_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEjaLezvcsv22HE-JNZPx-bqPGgpYthoyOo8aCli2GjI49jwpBSq9gcQl8JqbzCM2QG21Ft4WM4AyBDnG4Ur4VX&_nc_ohc=4bkOnY6YwHgQ7kNvwGiNDyL&_nc_oc=Adn9gNsxAh_QUDfU3M2R4gaMS-7k_ZIEBGzHIsRiwdcjeqwH7QnXygWgDkwsZaTzQiE&_nc_zt=23&_nc_ht=scontent.fcrk4-1.fna&_nc_gid=fOxM-e_XsM1OcMOtRdIrSA&oh=00_AfFbKsjIFstWOTltiBZb-92nBjXCANUDBya8tgXsLMk0rA&oe=6813DC65" alt="Vinz Car Care Center shop">
+                </div>
+                <div class="about-text">
+                    <h3>Reputation and Customer Trust</h3>
+                    <p>Vinz Car Care Center has built a reputation for providing reliable and efficient automotive services. Many car owners in Alaminos City and surrounding areas trust us for their vehicle maintenance needs.</p>
+                    
+                    <h3>Professional Service</h3>
+                    <p>Our business is known for its professional approach, high-quality products, and skilled mechanics who ensure that customers' vehicles are handled with care.</p>
+                    
+                    <h3>Premium Products</h3>
+                    <p>In addition to our automotive services, we actively promote the availability of premium automotive products, including USLUBE lubricants, which are known for enhancing engine performance and extending the lifespan of vehicle components.</p>
+                    
+                    <h3>Convenient Location</h3>
+                    <p>Our shop is conveniently situated along the highway in Barangay Alos, making it easily accessible to customers traveling through or residing in Alaminos and nearby towns.</p>
+                    
+                    <div class="owner-info">
+                        <h4>Owner: Leonardo Quinto Vinluan Jr.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Reach out to schedule a service or learn more about what we offer</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" class="contact-icon"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Alos, Alaminos City, Pangasinan (along the highway)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="phone" class="contact-icon"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+639511812383">0951 181 2383</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" class="contact-icon"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:vinzcarcare@gmail.com">vinzcarcare@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="clock" class="contact-icon"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    </section>
+
+    <section class="map">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>We're conveniently located along the highway in Barangay Alos, Alaminos City</p>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.1804815741602!2d119.96381427379754!3d16.107961938402553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3393c2aeee0fbc93%3A0xe8eb4e97559bbcda!2sVinz%20Car%20Care%20Center!5e0!3m2!1sen!2sph!4v1741061524513!5m2!1sen!2sph" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Location of Vinz Car Care Center on Google Maps">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Vinz <span>Car Care</span> Center</h2>
+                    <p>Your trusted automotive service provider in Alaminos City, Pangasinan.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li>Preventive Maintenance</li>
+                        <li>Oil Change Services</li>
+                        <li>Brake System Check & Repair</li>
+                        <li>Battery Inspection & Replacement</li>
+                        <li>Engine Tune-ups</li>
+                        <li>Tire Inspection & Services</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1AGKSuykZp/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:vinzcarcare@gmail.com" class="social-icon" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:0951 181 2383" class="social-icon" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Vinz Car Care Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+  
+    <div class="toast" id="toastNotification"></div>
+
+    <script>
+        
+        lucide.createIcons();
+
+        
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+       
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const toastNotification = document.getElementById('toastNotification');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            loadingSpinner.style.display = 'inline-block';
+            
+            
+            setTimeout(() => {
+               
+                submitBtn.disabled = false;
+                loadingSpinner.style.display = 'none';
+                
+                
+                toastNotification.textContent = 'Thank you for your message! We will get back to you soon.';
+                toastNotification.classList.add('visible');
+                
+                
+                form.reset();
+                
+               
+                setTimeout(() => {
+                    toastNotification.classList.remove('visible');
+                }, 5000);
+            }, 1500);
+        });
+
+       
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            const label = form.querySelector(`label[for="${field.id}"]`);
+            if (label) {
+                const span = document.createElement('span');
+                span.className = 'required';
+                span.textContent = ' *';
+                span.style.color = 'red';
+                label.appendChild(span);
+            }
+        });
+
+       
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.loading = 'lazy';
+            });
+        }
+
+        
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('touchstart', function() {
+                this.classList.add('hover');
+            }, {passive: true});
+        });
+    </script>
+</body>
+</html>
