@@ -234,7 +234,7 @@
         .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
               
-            url('https://media-hosting.imagekit.io/bfe7c4f169354b3b/download.jfif?Expires=1841372721&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=GUlj5cHyznW4htV5wipuhrgOhDHJdW1o8V6HxpVxX~XaxkpOzxRnBFPok8SxblgmgNQeBAZXVIe8wycllszUUgX4ol0xLRdmfQKH65IavANtCej6V9KrdYxSmO10OqKYgN2XMBOFjVbBLmgvkwvwt1uKq3NifUjVFZRNR9fIb74v35B4-OTkW1SKVSFxZ2xqB-R-tQWl7cjNUwq3rgSdPg~6RIktqgfKAH4KMoEJM3fTYn239Je4el3Qwv99Ph04N5tIRcuM1aD8VUN5kL3kKR0qborfnRTw86FYTDSjChpRu-G1R8-dLXSd1V5vAamhD4Wg4vLsvUXLZ3Ve0BUn9w__');
+            url('https://scontent.fcrk2-3.fna.fbcdn.net/v/t39.30808-6/480904434_978896557672123_8872813352309309355_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHM-oLGzbzbROjChV27LsUr7MDRUmiJ8B7swNFSaInwHq1jkyPe2TpCN9HMBPUgN9LkaCLTuGqn503RmMchu5Hn&_nc_ohc=1fl2o18Nqh4Q7kNvwGHwy20&_nc_oc=AdmscONiVYsYjNhJuQLbjsdmBjoM_03Aqvok5gACcke3Z76kbCIUjlGYxl3dI1W_5fk&_nc_zt=23&_nc_ht=scontent.fcrk2-3.fna&_nc_gid=1V9R-d_snPPaDv5ykmU7Fw&oh=00_AfJNJsfoAftUa63XVKPSr06UNUpnD21b45pNCS3rV5SLYA&oe=6823743D');
 
   background-size: cover;
   background-position: center;
@@ -340,7 +340,7 @@
             color: var(--gray-color);
         }
 
-        .cta {
+       .cta {
     background: linear-gradient(rgba(189, 213, 243, 0.9), rgba(0, 51, 102, 0.9)),
     url('https://media-hosting.imagekit.io/4a354d8567f74c83/top.jpg');
     background-size: cover;
@@ -686,155 +686,225 @@
         }
 
        
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                margin-bottom: 30px;
-                order: -1;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
+       /* ===== Mobile-First Base Styles (Applies to all screens) ===== */
+.container {
+  padding: 0 15px;
+}
 
-            .service-card {
-                padding: 25px;
-            }
-        }
+.section-header h2 {
+  font-size: 1.6rem;
+}
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-            
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                gap: 0;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-                height: calc(100vh - 80px);
-                overflow-y: auto;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
+.section-header p {
+  font-size: 1rem;
+}
 
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
+.service-card {
+  padding: 20px;
+}
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+.contact-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-            .map-container {
-                height: 350px;
-            }
-        }
+.contact-icon {
+  margin-bottom: 10px;
+}
 
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 15px;
-            }
+.hero-buttons {
+  flex-direction: column;
+  gap: 15px;
+}
 
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
 
-            .section-header p {
-                font-size: 1rem;
-            }
+.map-container {
+  height: 300px;
+}
 
-            .service-card {
-                padding: 20px;
-            }
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
 
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+.nav-links {
+  position: fixed;
+  left: -100%;
+  top: 80px;
+  gap: 0;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 100;
+}
 
-            .contact-icon {
-                margin-bottom: 10px;
-            }
+.nav-links.active {
+  left: 0;
+}
 
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
+.nav-links li {
+  margin: 15px 0;
+}
 
-        
-        @media print {
-            .navbar, .back-to-top, .hero, .cta, footer {
-                display: none !important;
-            }
+.nav-links a {
+  font-size: 1.2rem;
+  color: #333;
+}
 
-            body {
-                background-color: white;
-                color: black;
-                font-size: 12pt;
-            }
+.back-to-top {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  bottom: 20px;
+  right: 20px;
+}
 
-            .container {
-                max-width: 100%;
-                padding: 0;
-            }
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
 
-            .section-header h2 {
-                color: black;
-            }
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
 
-            a {
-                text-decoration: underline;
-                color: black;
-            }
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
-            .btn {
-                display: none;
-            }
-        }
+/* ===== Tablet (≥ 768px) ===== */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .map-container {
+    height: 350px;
+  }
+
+  /* Desktop navigation */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    height: auto;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 0 15px;
+  }
+
+  .nav-links a {
+    color: white;
+  }
+}
+
+/* ===== Desktop (≥ 992px) ===== */
+@media (min-width: 992px) {
+  .about-content,
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .about-image {
+    margin-bottom: 0;
+    order: 0;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Enable parallax only on desktop */
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+/* ===== Large Desktop (≥ 1200px) ===== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .navbar, 
+  .back-to-top, 
+  .hero, 
+  .cta, 
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: black !important;
+  }
+
+  /* Show URLs for printed links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+
+  /* Force visible text for print */
+  .section-header h2 {
+    color: black !important;
+  }
+}
     </style>
 </head>
 <body>
