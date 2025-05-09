@@ -340,15 +340,21 @@
             color: var(--gray-color);
         }
 
-       .cta {
-    background: linear-gradient(rgba(189, 213, 243, 0.9), rgba(0, 51, 102, 0.9)),
-    url('https://media-hosting.imagekit.io/4a354d8567f74c83/top.jpg');
+      .cta {
+    background: 
+        linear-gradient(rgba(189, 213, 243, 0.5), rgba(0, 51, 102, 0.5)),
+        url('https://i.ibb.co/NdWWtsrh/high-res-image.jpg'); /* Use high-res image */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     padding: 100px 0;
     text-align: center;
     color: white;
+    min-height: 100vh;
+    /* Optional: Improve rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
         .cta h2 {
             font-size: clamp(1.8rem, 4vw, 2.5rem);
